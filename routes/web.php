@@ -20,3 +20,8 @@ Route::get('/welcome', function () {
         return view('user');
 
     })->name('user');
+
+    
+    Route::get('/home', function(){
+        return "home";
+    });
