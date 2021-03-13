@@ -1,6 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\DB;
+
+use App\Models\Post;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -24,4 +28,15 @@ Route::get('/welcome', function () {
     
     Route::get('/home', function(){
         return "home";
+    });
+    Route::get('post/add', function(){
+        DB::table('post')->insert([
+            'title' => 'SDU',
+            'body' => 'Suleyman Demirel University (SDU)'
+        ]);
+    });
+    
+    Route::get('post', function () { 
+        $post = Post::find(1); 
+        return $post;
     });
