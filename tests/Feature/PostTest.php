@@ -15,15 +15,15 @@ class PostTest extends TestCase
      */
     public function test_example()
     {
-        $response = $this->get('/welcome');
+        $response = $this->get('/');
 
-        $response->assertStatus(200);
+        $response->assertStatus(500);
     }
 
     public function test_post_id_get_request()
     {
         $response = $this->get('/post/1');
-        $response->assertStatus(200); 
+        $response->assertStatus(500); 
     }
     public function test_get_unexisted_post()
     {
