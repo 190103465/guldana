@@ -27,7 +27,7 @@ class PostController extends Controller
       $post = Post::find($id);
 
       if ($post == null)
-      return response (404);
+      return response (200);
 
       return view('post.detail')->with(['post' => $post]);
     }

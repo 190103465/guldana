@@ -3,6 +3,8 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
+use App\http\Controllers\ApiContoller;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -17,3 +19,6 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('/post', [ApiController::class, 'index']);
+Route::get('/post/details', [ApiController::class, 'get_post']); // post_id ->
